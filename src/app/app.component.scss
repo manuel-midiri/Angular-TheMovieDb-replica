@@ -1,0 +1,13 @@
+@import '../styles/color.scss';
+
+mat-drawer-container{
+  height: 100vh;
+  mat-drawer{
+    width: 85vw;
+    background-color: map-get($md-primary, 500);
+  }
+}
+
+.navbar{
+  z-index: 5;
+}

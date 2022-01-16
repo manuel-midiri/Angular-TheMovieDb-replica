@@ -1,0 +1,105 @@
+@import '../../../styles/color.scss';
+
+.container-navbar{
+  width: 100vw;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: map-get($md-primary , 500);
+  color: white;
+  &__desktop{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo-menu{
+      width: 50%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img{
+        width: 154px;
+        height: 20px;
+      }
+      &__conteiner-menu{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10px;
+        &__item{
+          list-style: none;
+          padding: 8px;
+          margin-left: 10px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &__social{
+      width: 200px;
+      &__container-social{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__item{
+          list-style: none;
+          display: flex;
+          align-items: center;
+          &:nth-child(2){
+            border: 1px solid white;
+            padding: 2px 6px;
+            font-weight: 500;
+            text-transform: uppercase;
+            border-radius: 3px;
+            &:hover{
+              background-color: #fff;
+              color: map-get($md-primary , 500);
+            }
+          }
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-navbar-mobile{
+  width: 100vw;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: map-get($md-primary , 500);
+  color: white;
+  padding: 0 20px;
+  position: relative;
+  &__toogle{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 40px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__social{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

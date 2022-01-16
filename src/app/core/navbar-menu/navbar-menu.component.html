@@ -1,0 +1,49 @@
+<ng-container *ngIf="screenWidth > 900; else elseTemplate">
+  <div class="container-navbar">
+    <div class="container-navbar__desktop">
+      <div class="container-navbar__desktop__logo-menu">
+        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+             alt="logo TheMovieDb">
+             <ul class="container-navbar__desktop__logo-menu__conteiner-menu">
+               <li class="container-navbar__desktop__logo-menu__conteiner-menu__item">Film</li>
+               <li class="container-navbar__desktop__logo-menu__conteiner-menu__item">Serie Tv</li>
+               <li class="container-navbar__desktop__logo-menu__conteiner-menu__item">Persone</li>
+               <li class="container-navbar__desktop__logo-menu__conteiner-menu__item">More</li>
+             </ul>
+      </div>
+      <div class="container-navbar__desktop__social">
+        <ul class="container-navbar__desktop__social__container-social">
+          <li class="container-navbar__desktop__social__container-social__item">
+            <mat-icon>add</mat-icon>
+          </li>
+          <li class="container-navbar__desktop__social__container-social__item">it</li>
+          <li class="container-navbar__desktop__social__container-social__item">
+            <mat-icon>notifications</mat-icon>
+          </li>
+          <li class="container-navbar__desktop__social__container-social__item">
+            <mat-icon>account_circle</mat-icon>
+          </li>
+          <li class="container-navbar__desktop__social__container-social__item">
+            <mat-icon color="accent">search</mat-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="container-navbar-mobile">
+    <div class="container-navbar-mobile__toogle">
+      <mat-icon (click)="toggleDrawer()">menu</mat-icon>
+    </div>
+    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="logo TheMovieDb mobile">
+    <div class="container-navbar-mobile__social">
+      <mat-icon>notifications</mat-icon>
+      <mat-icon>account_circle</mat-icon>
+      <mat-icon color="accent">search</mat-icon>
+    </div>
+  </div>
+</ng-template>
+
+
+
