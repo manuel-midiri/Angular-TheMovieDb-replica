@@ -1,0 +1,31 @@
+@import "~@angular/material/theming";
+@import "./color.scss";
+
+@include mat-core();
+
+$theMovieDb-customTheme-primary: mat-palette($md-primary, 500); //verde
+$theMovieDb-customTheme-accent: mat-palette($md-accent, 500); //blue
+$theMovieDb-customTheme-warn: mat-palette($md-red, 500);
+
+$body-font: 'Source Sans Pro', sans-serif;
+$headers-font: 'Source Sans Pro', sans-serif;
+$line-height-custom: 1.35px;
+
+$theMovieDb-typography: mat-typography-config(
+  $display-4: mat-typography-level(112px, 112px, 600, $headers-font, $line-height-custom),
+  $display-3: mat-typography-level(56px, 56px, 600, $headers-font, $line-height-custom),
+  $display-2: mat-typography-level(45px, 48px, 600, $headers-font, $line-height-custom),
+  $display-1: mat-typography-level(34px, 40px, 600, $headers-font, $line-height-custom),
+  $headline: mat-typography-level(24px, 32px, 600, $headers-font, $line-height-custom),
+  $title: mat-typography-level(20px, 32px, 600, $headers-font, $line-height-custom),
+  $subheading-2: mat-typography-level(16px, 28px, 500, $headers-font, $line-height-custom),
+  $subheading-1: mat-typography-level(14px, 20px, 500, $headers-font, $line-height-custom),
+  $body-1: mat-typography-level(14px, 20px, 400, $body-font, $line-height-custom),
+  $body-2: mat-typography-level(14px, 20px, 400, $body-font, $line-height-custom),
+  $button: mat-typography-level(14px, 20px, 700, $headers-font, $line-height-custom)
+);
+
+$theMovieDb-customTheme: mat-light-theme($theMovieDb-customTheme-primary, $theMovieDb-customTheme-accent, $theMovieDb-customTheme-warn);
+
+@include angular-material-theme($theMovieDb-customTheme);
+@include angular-material-typography($theMovieDb-typography);
