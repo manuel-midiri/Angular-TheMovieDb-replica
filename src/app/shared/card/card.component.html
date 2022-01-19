@@ -1,0 +1,36 @@
+<div class="container-card">
+  <div class="container-card__image">
+    <div class="container-card__image__container-menu-card">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="container-card__image__container-menu-card__container-menu">
+        <button mat-menu-item class="container-card__image__container-menu-card__container-menu__item">
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item class="container-card__image__container-menu-card__container-menu__item">
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item class="container-card__image__container-menu-card__container-menu__item">
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+        <button mat-menu-item class="container-card__image__container-menu-card__container-menu__item">
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="container-card__image__container-percentage">
+      <p class="container-card__image__container-percentage__number">80</p>
+      <p class="container-card__image__container-percentage__simbol">%</p>
+    </div>
+    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/kgfLM9MqLcYY7qcW4mwPM2JAU5a.jpg" alt="">
+  </div>
+  <div class="container-card__text">
+    <p class="container-card__text__title">Demon Slayer - Il treno Mugen</p>
+    <p class="container-card__text__date">16 ott, 2020</p>
+  </div>
+</div>

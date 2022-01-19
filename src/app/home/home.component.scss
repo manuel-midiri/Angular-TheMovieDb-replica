@@ -1,0 +1,79 @@
+header{
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .container-index{
+    width: 50%;
+    min-height: 350px;
+    background: url(https://www.themoviedb.org/assets/2/v4/taw/2021/shape_8-fae706ec0da1ef4e0c48b6abfe1984cfb5808be9dfc01619b25b2a9691c43f56.svg) no-repeat center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    &__year{
+      margin-top: 100px;
+      font-size: 150px;
+    }
+    &__text-up{
+      margin-top: 100px;
+      font-size: 40px;
+    }
+    &__text-bottom{
+      font-size: 20px;
+    }
+  }
+  .container-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+    &__container-input{
+      width: 100%;
+      position: relative;
+      &__textSearch{
+        position: absolute;
+        top: 70%;
+        right: 1%;
+        transform: translateY(-70%);
+        p{
+          font-weight: bold;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+//input outline custom
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgb(255,202,154);
+  border-radius: 10px;
+}
+:host ::ng-deep .mat-form-field-outline-start {
+  border-radius: 25px 0 0 25px!important;
+  min-width: 25px !important;
+}
+:host ::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 25px 25px 0!important;
+}
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 5px 10px 13px;
+}
+:host ::ng-deep .mat-form-field-wrapper {
+  margin: 0!important;
+}
+
+main{
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  .container-popular{
+
+  }
+}

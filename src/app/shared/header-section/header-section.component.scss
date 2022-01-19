@@ -1,0 +1,43 @@
+@import '../../../styles/color.scss';
+
+.container-headerSection{
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  &__title{
+    p{
+      margin: 0;
+      letter-spacing: .8px;
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+  }
+  &__toogle{
+    height: 32px;
+    border-top: -10px;
+    margin: 0;
+    margin-left: 30px;
+    display: flex;
+    border: 1px solid map-get($md-primary, 500);
+    border-radius: 20px;
+    &__item{
+      padding: 5px 15px;
+      font-weight: 600;
+      font-size: 1em;
+      text-align: center;
+      margin: -1px 0 0;
+      color: map-get($md-primary, 500);
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+.isActive{
+  border-radius: 20px;
+  background-color: map-get($md-primary, 500);
+  color: rgb(106,245,232);
+  color: linear-gradient(149deg, rgba(106,245,232,1) 0%, rgba(1,180,228,1) 80%);
+}

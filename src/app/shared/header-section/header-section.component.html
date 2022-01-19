@@ -1,0 +1,12 @@
+<div class="container-headerSection">
+  <div class="container-headerSection__title">
+    <p>{{ title }}</p>
+  </div>
+  <div class="container-headerSection__toogle">
+    <p class="container-headerSection__toogle__item" *ngFor="let item of listMenu"
+    [ngClass]="{'isActive': item === selectedItem}" (click)="onSelectSection(item)"
+    >
+      {{ item }}
+    </p>
+  </div>
+</div>
