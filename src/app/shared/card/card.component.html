@@ -24,13 +24,13 @@
       </mat-menu>
     </div>
     <div class="container-card__image__container-percentage">
-      <p class="container-card__image__container-percentage__number">80</p>
+      <p class="container-card__image__container-percentage__number">{{objMovie.vote}}</p>
       <p class="container-card__image__container-percentage__simbol">%</p>
     </div>
-    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/kgfLM9MqLcYY7qcW4mwPM2JAU5a.jpg" alt="">
+    <img [src]="objMovie.image" [alt]="objMovie.title">
   </div>
   <div class="container-card__text">
-    <p class="container-card__text__title">Demon Slayer - Il treno Mugen</p>
-    <p class="container-card__text__date">16 ott, 2020</p>
+    <p class="container-card__text__title">{{objMovie.title}}</p>
+    <p class="container-card__text__date">{{objMovie.date}}</p>
   </div>
 </div>

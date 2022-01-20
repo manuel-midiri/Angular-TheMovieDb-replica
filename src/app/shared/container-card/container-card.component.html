@@ -1,4 +1,4 @@
 <app-header-section [title]="'Cosa è popolare'"></app-header-section>
 <div class="container-cards">
-  <app-card></app-card>
+  <app-card [objItems]="item" *ngFor="let item of arrayItems"></app-card>
 </div>

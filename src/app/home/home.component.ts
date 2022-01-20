@@ -1,4 +1,6 @@
+import { TheMovieDBService } from './../services/theMovieDB.service';
 import { Component, OnInit } from '@angular/core';
+import { MoviePopular } from '../models/moviesModel';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  options = [];
+  moviePopular: MoviePopular = {} as MoviePopular;
 
-  constructor() { }
+  constructor(private theMovieDBService: TheMovieDBService) { }
 
   ngOnInit() {
+
+    this.theMovieDBService.moviePopular$.subscribe(movies => this.moviePopular = movies);
+
   }
 
 }
