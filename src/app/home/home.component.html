@@ -15,6 +15,25 @@
 </header>
 <main>
   <section class="container-popular">
+    <app-header-section [title]="'Cosa è popolare'" [listMenu]="listMenuPopular"></app-header-section>
     <app-container-card [arrayItems]="moviePopular.results"></app-container-card>
   </section>
+  <section class="container-popular">
+    <app-header-section [title]="'Visione gratuita'" [listMenu]="listMenuFree"></app-header-section>
+    <app-container-card [arrayItems]="movieFree.results"></app-container-card>
+  </section>
+  <section class="container-popular trailer"
+    [ngStyle]="{'background-image': imageBackgroundSection ? 'url(' + imageBackgroundSection + ')' : ''}"
+
+  >
+    <app-header-section [title]="'Ultimi Trailer'" [listMenu]="listMenuTrailer" [trailer]="true"></app-header-section>
+    <app-container-video-card [arrayItems]="movieTrailer" (imageUrl)="outputImage($event)"></app-container-video-card>
+  </section>
+  <section class="container-popular">
+    <app-header-section [title]="'Di tendenza'" [listMenu]="listMenuTrend"></app-header-section>
+    <app-container-card [arrayItems]="movieTreand.results"></app-container-card>
+  </section>
 </main>
+<footer>
+  <app-footer></app-footer>
+</footer>

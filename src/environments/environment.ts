@@ -5,8 +5,10 @@ export const environment = {
     search: 'search/keyword',
     moviePopular: 'movie/popular',
     tvPopular: 'tv/popular',
+    movieTopRated: 'movie/top_rated',
     tvTopRated: 'tv/top_rated',
-    lastes: 'movie/latest',
+    movieLastes: 'movie/latest',
+    tvLastes: 'tv/latest',
     theatres: 'movie/now_playing'
   }
 };

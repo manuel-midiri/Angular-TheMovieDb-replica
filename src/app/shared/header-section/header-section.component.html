@@ -1,10 +1,14 @@
 <div class="container-headerSection">
   <div class="container-headerSection__title">
-    <p>{{ title }}</p>
+    <p [ngStyle]="{'color': trailer ? 'white': ''}">{{ title }}</p>
   </div>
-  <div class="container-headerSection__toogle">
-    <p class="container-headerSection__toogle__item" *ngFor="let item of listMenu"
-    [ngClass]="{'isActive': item === selectedItem}" (click)="onSelectSection(item)"
+  <div class="container-headerSection__toogle"
+  [ngClass]="{'colorBorder': trailer}"
+  >
+    <p class="container-headerSection__toogle__item" *ngFor="let item of listMenu; let idx = index;"
+      [ngClass]="{'isActive': item === selectedItem && !trailer, 'colorText': item === selectedItem && trailer}"
+      [ngStyle]="{'color': item !== selectedItem && trailer ? 'white': ''}"
+      (click)="onSelectSection(item)"
     >
       {{ item }}
     </p>

@@ -25,14 +25,13 @@
         </button>
       </mat-menu>
     </div>
-    <div class="container-card__image__container-percentage">
-      <p class="container-card__image__container-percentage__number">{{objMovie.vote}}</p>
-      <p class="container-card__image__container-percentage__simbol">%</p>
-    </div>
     <img [src]="objMovie.image" [alt]="objMovie.title">
+    <div class="container-card__image__play">
+      <mat-icon>play_arrow</mat-icon>
+    </div>
   </div>
   <div class="container-card__text">
     <p class="container-card__text__title">{{objMovie.title}}</p>
-    <p class="container-card__text__date">{{objMovie.date}}</p>
+    <p class="container-card__text__subTitle">{{objMovie.date}}</p>
   </div>
 </div>

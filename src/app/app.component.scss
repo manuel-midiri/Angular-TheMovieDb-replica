@@ -2,12 +2,14 @@
 
 mat-drawer-container{
   height: 100vh;
+  overflow-x: hidden;
   mat-drawer{
     width: 85vw;
     background-color: map-get($md-primary, 500);
+    overflow-x: hidden;
   }
 }
 
-.navbar{
-  z-index: 5;
+.mat-drawer-content{
+  overflow-x: hidden;
 }
