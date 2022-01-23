@@ -23,6 +23,9 @@
       img{
         width: 154px;
         height: 20px;
+        &:hover{
+          cursor: pointer;
+        }
       }
       &__conteiner-menu{
         display: flex;

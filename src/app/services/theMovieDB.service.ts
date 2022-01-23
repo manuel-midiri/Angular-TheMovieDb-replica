@@ -21,6 +21,9 @@ export class TheMovieDBService {
   public movieTrailer$: Observable<any> = this.movieTrailerBS.asObservable();
   public movieMovieTrendBS: BehaviorSubject<any> = new BehaviorSubject<any>('');
   public movieMovieTrend$: Observable<any> = this.movieMovieTrendBS.asObservable();
+  public othersChargeBS: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public othersCharge$: Observable<boolean> = this.othersChargeBS.asObservable();
+
 
   constructor(private http: HttpClient) { }
 
@@ -30,9 +33,9 @@ export class TheMovieDBService {
     );
   }
 
-  getMoviePopular(): Observable<MoviePopular>{
+  getMoviePopular(pageNumber: number = 1): Observable<MoviePopular>{
     return this.http.get<MoviePopular>(
-    `${environment.endpoints.basePath}${environment.endpoints.moviePopular}?api_key=${this.v3Auth}`
+    `${environment.endpoints.basePath}${environment.endpoints.moviePopular}?api_key=${this.v3Auth}&page=${pageNumber}`
     );
   }
 

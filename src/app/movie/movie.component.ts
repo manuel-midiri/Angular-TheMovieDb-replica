@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TheMovieDBService } from '../services/theMovieDB.service';
 
 @Component({
   selector: 'app-movie',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieComponent implements OnInit {
 
-  constructor() { }
+  cardArray: any;
+  btnVisible: boolean = true;
+
+  constructor(private theMovieDbService: TheMovieDBService) { }
 
   ngOnInit() {
+    this.theMovieDbService.moviePopular$.subscribe(movies => this.cardArray = movies);
+  }
+
+  onClickedButton(){
+    this.btnVisible = false;
+    this.theMovieDbService.othersChargeBS.next(true);
   }
 
 }

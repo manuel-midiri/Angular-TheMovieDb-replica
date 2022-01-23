@@ -1,0 +1,30 @@
+@import '../../../../styles/color.scss';
+
+.container-filter{
+  mat-accordion{
+    mat-expansion-panel{
+      margin-bottom: 20px!important;
+      mat-expansion-panel-header{
+        mat-panel-title{
+          p{
+            font-size: 1.1em;
+            font-weight: bold;
+          }
+        }
+      }
+      p{
+        font-size: .9em;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  button{
+    width: 100%;
+    border-radius: 20px;
+    background-color: map-get($md-grey, 500);
+    &:hover{
+
+      background-color: map-get($md-grey, 900);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../styles/color.scss';
+
+.container-general{
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0 auto;
+  &__container-movie{
+    display: flex;
+    &__body{
+      padding-bottom: 20px;
+      &__container-card{
+        margin-left: 30px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      button{
+        width: 100%;
+        background-color: map-get($md-accent, 500);
+        color: white;
+        &:hover{
+          background-color: map-get($md-accent, 700);
+        }
+      }
+    }
+  }
+}

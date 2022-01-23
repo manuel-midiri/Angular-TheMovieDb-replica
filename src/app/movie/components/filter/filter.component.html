@@ -1,0 +1,40 @@
+<div class="container-filter">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <p>Ordina</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Ordina risultati per</p>
+      <mat-form-field appearance="fill">
+        <mat-select>
+          <mat-option *ngFor="let sort of sorts" [value]="sort">
+            {{sort}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <p>Filtri</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <p>Dove guardare</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <button mat-button>Cerca</button>
+</div>

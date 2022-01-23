@@ -4,10 +4,11 @@ import { ContainerCardComponent } from './container-card/container-card.componen
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { VideoCardComponent } from './video-card/video-card.component';
 import { FooterComponent } from '../core/footer/footer.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -15,7 +16,8 @@ import { FooterComponent } from '../core/footer/footer.component';
   imports: [
     CommonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatButtonModule
   ],
   declarations: [
     ContainerCardComponent,
