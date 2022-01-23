@@ -9,6 +9,7 @@ export const environment = {
     tvTopRated: 'tv/top_rated',
     movieLastes: 'movie/latest',
     tvLastes: 'tv/latest',
-    theatres: 'movie/now_playing'
+    theatres: 'movie/now_playing',
+    upcoming: 'movie/upcoming'
   }
 };

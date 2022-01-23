@@ -39,27 +39,33 @@ export class TheMovieDBService {
     );
   }
 
-  getTvPopular(): Observable<TvPopular>{
+  getTvPopular(pageNumber: number = 1): Observable<TvPopular>{
     return this.http.get<TvPopular>(
-    `${environment.endpoints.basePath}${environment.endpoints.tvPopular}?api_key=${this.v3Auth}`
+    `${environment.endpoints.basePath}${environment.endpoints.tvPopular}?api_key=${this.v3Auth}&page=${pageNumber}`
     );
   }
 
-  getMovieTopRated(): Observable<MovieTopRated>{
+  getMovieTopRated(pageNumber: number = 1): Observable<MovieTopRated>{
     return this.http.get<MovieTopRated>(
-    `${environment.endpoints.basePath}${environment.endpoints.movieTopRated}?api_key=${this.v3Auth}`
+    `${environment.endpoints.basePath}${environment.endpoints.movieTopRated}?api_key=${this.v3Auth}&page=${pageNumber}`
     );
   }
 
-  getTvTopRated(): Observable<TvTopRated>{
+  getTvTopRated(pageNumber: number = 1): Observable<TvTopRated>{
     return this.http.get<TvTopRated>(
-    `${environment.endpoints.basePath}${environment.endpoints.tvTopRated}?api_key=${this.v3Auth}`
+    `${environment.endpoints.basePath}${environment.endpoints.tvTopRated}?api_key=${this.v3Auth}&page=${pageNumber}`
     );
   }
 
-  getTheater(): Observable<Theatres>{
+  getTheater(pageNumber: number = 1): Observable<Theatres>{
     return this.http.get<Theatres>(
-    `${environment.endpoints.basePath}${environment.endpoints.theatres}?api_key=${this.v3Auth}`
+    `${environment.endpoints.basePath}${environment.endpoints.theatres}?api_key=${this.v3Auth}&page=${pageNumber}`
+    );
+  }
+
+  getUpcoming(pageNumber: number = 1): Observable<Theatres>{
+    return this.http.get<Theatres>(
+    `${environment.endpoints.basePath}${environment.endpoints.upcoming}?api_key=${this.v3Auth}&page=${pageNumber}`
     );
   }
 

@@ -8,9 +8,9 @@
                <li class="container-navbar__desktop__logo-menu__conteiner-menu__item" [matMenuTriggerFor]="menuFilm">Film</li>
                <mat-menu #menuFilm="matMenu">
                 <button mat-menu-item routerLink="/movie" (click)="getMovie('Popolare')">Popolare</button>
-                <button mat-menu-item>Adesso In Onda</button>
-                <button mat-menu-item>In Arrivo</button>
-                <button mat-menu-item>Più Votati</button>
+                <button mat-menu-item routerLink="/movie/now_playing" (click)="getMovie('Adesso In Onda')">Adesso In Onda</button>
+                <button mat-menu-item routerLink="/movie/upcoming" (click)="getMovie('In Arrivo')">In Arrivo</button>
+                <button mat-menu-item routerLink="/movie/top-rated" (click)="getMovie('Più Votati')">Più Votati</button>
               </mat-menu>
                <li class="container-navbar__desktop__logo-menu__conteiner-menu__item" [matMenuTriggerFor]="menuSerieTV">Serie Tv</li>
                <mat-menu #menuSerieTV="matMenu">

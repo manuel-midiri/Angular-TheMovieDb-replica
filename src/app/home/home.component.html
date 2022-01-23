@@ -24,7 +24,7 @@
   </section>
   <section class="container-popular trailer"
     [ngStyle]="{'background-image': imageBackgroundSection ? 'url(' + imageBackgroundSection + ')' : ''}"
-  >{{imageBackgroundSection}}
+  >
     <app-header-section [title]="'Ultimi Trailer'" [listMenu]="listMenuTrailer" [trailer]="true"></app-header-section>
     <app-container-video-card [arrayItems]="movieTrailer" (imageUrl)="outputImage($event)"></app-container-video-card>
   </section>
