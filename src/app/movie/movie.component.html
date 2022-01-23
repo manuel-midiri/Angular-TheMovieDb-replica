@@ -4,7 +4,7 @@
     <app-filter></app-filter>
     <div class="container-general__container-movie__body">
       <div class="container-general__container-movie__body__container-card">
-        <app-card *ngFor="let item of cardArray.results" [objItems]="item"></app-card>
+        <app-card *ngFor="let item of cardArray?.results" [objItems]="item"></app-card>
       </div>
       <button mat-button *ngIf="btnVisible && cardArray" (click)="onClickedButton()">Carica Altro</button>
     </div>

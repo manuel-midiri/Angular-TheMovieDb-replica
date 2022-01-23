@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, pipe, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { SearchModel } from '../models/searchModel';
+import { routeMenuFilm } from '../shared/RouteEnum';
 
 
 @Injectable({

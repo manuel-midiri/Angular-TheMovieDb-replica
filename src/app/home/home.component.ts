@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.theMovieDBService.moviePopular$.subscribe(movies => this.moviePopular = movies);
-    this.theMovieDBService.movieTrailer$.subscribe(movies => this.movieTrailer = movies.results.filter((movie: any, idx: number) => idx < 4));
+    this.theMovieDBService.movieTrailer$.subscribe(movies => this.movieTrailer = movies.results);
     this.theMovieDBService.movieFreeVision$.subscribe(movieFree => this.movieFree = movieFree);
     this.theMovieDBService.movieMovieTrend$.subscribe(movieTreand => this.movieTreand = movieTreand);
   }
