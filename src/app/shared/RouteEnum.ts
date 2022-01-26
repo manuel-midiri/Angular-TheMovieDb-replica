@@ -14,10 +14,10 @@ export enum routeSection {
 };
 
 export enum routeMenuFilm {
-  POPOLARE = "Popolare",
-  ADESSO_IN_TV = "Adesso In Onda",
-  IN_ARRIVO = "In Arrivo",
-  PIU_VOTATI = "Più Votati"
+  POPOLARE = "/movie",
+  ADESSO_IN_TV = "/movie/now_playing",
+  IN_ARRIVO = "/movie/upcoming",
+  PIU_VOTATI = "/movie/top-rated"
 };
 
 export enum routeMenuTv {

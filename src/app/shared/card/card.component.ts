@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
       image: `https://image.tmdb.org/t/p/original/${this.objItems.poster_path}`,
       date: this.objItems.release_date || this.objItems.first_air_date,
       vote: this.objItems.vote_average
-    }
+    };
   }
 
 }
