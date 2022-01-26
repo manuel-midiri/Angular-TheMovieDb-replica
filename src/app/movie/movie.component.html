@@ -3,11 +3,9 @@
   <div class="container-general__container-movie">
     <app-filter></app-filter>
     <div class="container-general__container-movie__body">
-      <cdk-virtual-scroll-viewport class="container-general__container-movie__body__container-card"  itemSize="20"
-      (scrolledIndexChange)="onScrollDown($event)"
-      >
-        <app-card *cdkVirtualFor="let item of cardArray.results" [objItems]="item"></app-card>
-      </cdk-virtual-scroll-viewport>
+      <div class="container-general__container-movie__body__container-card">
+        <app-card *ngFor="let item of cardArray.results" [objItems]="item"></app-card>
+      </div>
       <button mat-button *ngIf="btnVisible && cardArray" (click)="onClickedButton()">Carica Altro</button>
     </div>
   </div>

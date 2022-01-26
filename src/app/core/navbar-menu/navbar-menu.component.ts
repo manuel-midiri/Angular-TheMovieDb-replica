@@ -1,9 +1,5 @@
-import { TheMovieDBService } from './../../services/theMovieDB.service';
-import { routeMenuFilm } from './../../shared/RouteEnum';
 import { SharedService } from './../../services/shared.service';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { filter, switchMap, tap } from 'rxjs';
-import { UpdateBSMovieService } from 'src/app/services/updateBSMovie/updateBSMovie.service';
 
 @Component({
   selector: 'app-navbar-menu',
@@ -14,21 +10,10 @@ export class NavbarMenuComponent implements OnInit {
 
   screenWidth: any;
 
-  constructor(
-    private sharedService: SharedService,
-    private theMovieDbService: TheMovieDBService,
-    private updateBSMovie: UpdateBSMovieService
-    ) { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
-
     this.screenWidth = window.innerWidth;
-    // this.theMovieDbService.othersCharge$.pipe(
-    //   filter(value => value === true),
-    //   switchMap(() => this.updateBSMovie.setActualSection$),
-    //   // tap(actualSection => this.updateBSMovie.detectingChange(actualSection)),
-    // ).subscribe(() => this.theMovieDbService.othersChargeBS.next(false));
-
   }
 
   @HostListener('window:resize', ['$event'])
