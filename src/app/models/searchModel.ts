@@ -9,3 +9,8 @@ export interface SearchModel {
   total_pages: number;
   total_results: number;
 }
+
+export interface SelectOption {
+  value: string;
+  view: string;
+}

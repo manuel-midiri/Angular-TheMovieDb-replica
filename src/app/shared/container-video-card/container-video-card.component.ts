@@ -14,7 +14,9 @@ export class ContainerVideoCardComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.imageUrl.emit(this.arrayItems[0]?.poster_path);
+      if (this.arrayItems) {
+        this.imageUrl.emit(this.arrayItems[0].poster_path);
+      }
     }, .10);
   }
 

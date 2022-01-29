@@ -23,7 +23,9 @@ export class HeaderSectionComponent implements OnInit {
     });
     this.theMovieDBService.getMovieTopRated().subscribe(movieFree => this.theMovieDBService.movieFreeVisionBS.next(movieFree));
     this.theMovieDBService.getTheater().subscribe(movieTreand => this.theMovieDBService.movieMovieTrendBS.next(movieTreand));
-    this.selectedItem = this.listMenu[0];
+    if (this.listMenu) {
+      this.selectedItem = this.listMenu[0];
+    };
   }
 
   onSelectSection(item: any){
