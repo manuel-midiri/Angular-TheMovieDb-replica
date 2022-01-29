@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ContainerVideoCardComponent } from './container-video-card/container-video-card.component';
 import { HeaderSectionComponent } from './header-section/header-section.component';
 import { ContainerCardComponent } from './container-card/container-card.component';
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   declarations: [
     ContainerCardComponent,

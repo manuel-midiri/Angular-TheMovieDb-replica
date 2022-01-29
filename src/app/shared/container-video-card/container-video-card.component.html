@@ -1,3 +1,5 @@
 <div class="container-cards">
-  <app-video-card [objItems]="item" *ngFor="let item of arrayItems" (mouseover)="onMouseOver(item.poster_path)" #card></app-video-card>
+  <app-video-card
+  [objItems]="item" *ngFor="let item of arrayItems" [routerLink]="['/movie', item.id]"
+  (mouseover)="onMouseOver(item.poster_path)" #card></app-video-card>
 </div>

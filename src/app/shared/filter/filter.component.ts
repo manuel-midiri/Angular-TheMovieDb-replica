@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SelectOption } from 'src/app/models/searchModel';
 import { switchMap, tap } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
+import { UpdateBSMovieService } from 'src/app/services/updateBSMovie/updateBSMovie.service';
 
 @Component({
   selector: 'app-filter',
@@ -30,7 +31,7 @@ export class FilterComponent implements OnInit {
 
   formSelect: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder, private sharedService: SharedService) {
+  constructor(private fb: FormBuilder, private sharedService: SharedService, private updateBsService: UpdateBSMovieService) {
     this.sharedService.setFilter$.subscribe(currentValue => {
       this.selectionDefault = currentValue
       this.formSelect = this.fb.group({
@@ -39,9 +40,7 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   get f(){
     return this.formSelect.controls;
@@ -49,8 +48,8 @@ export class FilterComponent implements OnInit {
 
   onSubmit(){
     console.log('value formSelect', this.formSelect.value);
-    this.sharedService.sortingMovie(this.formSelect.get('sort')?.value);
     this.sharedService.setFilterBS.next(this.formSelect.get('sort')?.value);
+    this.updateBsService.getMovie();
   }
 
 }
