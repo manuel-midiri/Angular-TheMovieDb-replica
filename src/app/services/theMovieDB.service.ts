@@ -1,4 +1,4 @@
-import { MovieById } from './../models/movieByIdModel';
+import { CreditsModel, MovieById } from './../models/movieByIdModel';
 import { MoviePopular, MovieTopRated, Theatres, TvPopular, TvTopRated } from './../models/moviesModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -47,6 +47,12 @@ export class TheMovieDBService {
     );
   }
 
+  getMovieCredits(idMovie: string): Observable<CreditsModel>{
+    return this.http.get<CreditsModel>(
+    `${environment.endpoints.basePath}${environment.endpoints.movieById}/${idMovie}/credits?api_key=${this.v3Auth}`
+    );
+  }
+
   getTvPopular(pageNumber: number = 1): Observable<TvPopular>{
     return this.http.get<TvPopular>(
     `${environment.endpoints.basePath}${environment.endpoints.tvPopular}?api_key=${this.v3Auth}&page=${pageNumber}`
@@ -56,6 +62,12 @@ export class TheMovieDBService {
   getTvByID(idTv: string): Observable<TvById>{
     return this.http.get<TvById>(
     `${environment.endpoints.basePath}${environment.endpoints.tvById}/${idTv}?api_key=${this.v3Auth}`
+    );
+  }
+
+  getTvCredits(idMovie: string): Observable<CreditsModel>{
+    return this.http.get<CreditsModel>(
+    `${environment.endpoints.basePath}${environment.endpoints.tvById}/${idMovie}/credits?api_key=${this.v3Auth}`
     );
   }
 

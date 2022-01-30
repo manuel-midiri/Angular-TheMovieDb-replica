@@ -1,0 +1,54 @@
+<div class="container-toolbar">
+  <ul class="container-toolbar__conteiner-menu">
+    <li class="container-toolbar__conteiner-menu__item" [matMenuTriggerFor]="toolbarOverview">
+      Overview
+      <mat-icon>arrow_drop_down</mat-icon>
+    </li>
+    <mat-menu #toolbarOverview="matMenu">
+     <button mat-menu-item>Main</button>
+     <button mat-menu-item>Alternative title</button>
+     <button mat-menu-item>Cast & Crew</button>
+     <button mat-menu-item>Release Dates</button>
+     <button mat-menu-item>Traslations</button>
+     <button mat-menu-item>Watch Now</button>
+     <button mat-menu-item>Modifiche</button>
+     <button mat-menu-item>Segnalazione</button>
+     <button mat-menu-item>Modifica</button>
+   </mat-menu>
+    <li class="container-toolbar__conteiner-menu__item" [matMenuTriggerFor]="toolbarMedia">
+      Media
+      <mat-icon>arrow_drop_down</mat-icon>
+    </li>
+    <mat-menu #toolbarMedia="matMenu">
+     <button mat-menu-item>Sfondi</button>
+     <button mat-menu-item>Logos</button>
+     <button mat-menu-item>Poster</button>
+     <button mat-menu-item [matMenuTriggerFor]="toolbarMediaVideo">Video</button>
+   </mat-menu>
+   <mat-menu #toolbarMediaVideo="matMenu">
+    <button mat-menu-item>Trailer</button>
+  </mat-menu>
+    <li class="container-toolbar__conteiner-menu__item" [matMenuTriggerFor]="toolbarFandom">
+      Fandom
+      <mat-icon>arrow_drop_down</mat-icon>
+    </li>
+    <mat-menu #toolbarFandom="matMenu">
+     <button mat-menu-item [matMenuTriggerFor]="toolbarFandomDiscussion">Discussioni</button>
+     <button mat-menu-item>Recensioni</button>
+   </mat-menu>
+   <mat-menu #toolbarFandomDiscussion="matMenu">
+    <button mat-menu-item>Descrizione</button>
+    <button mat-menu-item>Generale</button>
+    <button mat-menu-item>Problemi COntenuto</button>
+  </mat-menu>
+    <li class="container-toolbar__conteiner-menu__item" [matMenuTriggerFor]="toolbarShare">
+      Condividi
+      <mat-icon>arrow_drop_down</mat-icon>
+    </li>
+    <mat-menu #toolbarShare="matMenu">
+     <button mat-menu-item>Share Link</button>
+     <button mat-menu-item>Facebook</button>
+     <button mat-menu-item>Tweet</button>
+   </mat-menu>
+  </ul>
+</div>
