@@ -1,3 +1,12 @@
-<p>
-  tv works!
-</p>
+<div class="container-general">
+  <h1>Film Popolari</h1>
+  <div class="container-general__container-movie">
+    <app-filter></app-filter>
+    <div class="container-general__container-movie__body">
+      <div class="container-general__container-movie__body__container-card">
+        <app-card *ngFor="let item of cardArray.results" [objItems]="item" [routerLink]="['/tv', item.id]"></app-card>
+      </div>
+      <button mat-button *ngIf="btnVisible && cardArray" (click)="onClickedButton()">Carica Altro</button>
+    </div>
+  </div>
+</div>
