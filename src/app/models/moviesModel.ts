@@ -21,6 +21,7 @@ export interface MoviePopular {
   results: ResultMoviePopular[];
   total_pages: number;
   total_results: number;
+  section: string;
 }
 
 //TV POPULAR
@@ -76,6 +77,7 @@ export interface Theatres {
   results: ResultTheatres[];
   total_pages: number;
   total_results: number;
+  section: string;
 }
 
 
@@ -101,6 +103,7 @@ export interface TvTopRated {
   results: ResultTvTopRated[];
   total_pages: number;
   total_results: number;
+  section: string;
 }
 
 //MOVIE TOP RATED
@@ -126,6 +129,7 @@ export interface MovieTopRated {
   results: ResultMovieTopRated[];
   total_pages: number;
   total_results: number;
+  section: string;
 }
 
 
@@ -136,4 +140,11 @@ export interface Movie {
   date: string;
   title: string;
   vote: string;
+}
+
+export interface CardCast {
+  id: number;
+  profile_path: string;
+  original_name: string;
+  known_for_department: string;
 }

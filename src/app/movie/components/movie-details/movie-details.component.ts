@@ -1,4 +1,4 @@
-import { HeaderModel } from 'src/app/models/movieByIdModel';
+import { Cast, HeaderModel } from 'src/app/models/movieByIdModel';
 import { tap, forkJoin } from 'rxjs';
 import { TheMovieDBService } from './../../../services/theMovieDB.service';
 import { MovieById } from './../../../models/movieByIdModel';
@@ -15,6 +15,7 @@ export class MovieDetailsComponent implements OnInit {
   movieDetailID: any;
   movieDetailObj: MovieById = {} as MovieById;
   movieHeader: HeaderModel = {} as HeaderModel;
+  movieCast: Cast[] = [];
 
   constructor(private router: ActivatedRoute, private theMovieDBService: TheMovieDBService) { }
 
@@ -38,7 +39,8 @@ export class MovieDetailsComponent implements OnInit {
           release_date: movieHeader.movieById.release_date,
           runtime: movieHeader.movieById.runtime,
           crew: [...new Map(movieHeader.credits.crew.map(people => [people['id'], people])).values()]
-        }
+        };
+        this.movieCast = movieHeader.credits.cast;
       })
     ).subscribe();
   }

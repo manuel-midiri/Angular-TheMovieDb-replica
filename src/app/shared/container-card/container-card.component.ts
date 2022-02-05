@@ -8,10 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ContainerCardComponent implements OnInit {
 
   @Input() arrayItems: any[] = [];
+  @Input() router: string = '';
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.arrayItems);
+
   }
 
 }

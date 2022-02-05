@@ -23,7 +23,11 @@ export class HomeComponent implements OnInit {
   constructor(private theMovieDBService: TheMovieDBService) { }
 
   ngOnInit() {
-    this.theMovieDBService.moviePopular$.subscribe(movies => this.moviePopular = movies);
+    this.theMovieDBService.moviePopular$.subscribe(movies => {
+      this.moviePopular = movies;
+      console.log(movies);
+
+    });
     this.theMovieDBService.movieTrailer$.subscribe(movies => this.movieTrailer = movies.results);
     this.theMovieDBService.movieFreeVision$.subscribe(movieFree => this.movieFree = movieFree);
     this.theMovieDBService.movieMovieTrend$.subscribe(movieTreand => this.movieTreand = movieTreand);

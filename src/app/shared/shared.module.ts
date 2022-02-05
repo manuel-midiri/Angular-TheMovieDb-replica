@@ -1,3 +1,4 @@
+import { CardCastComponent } from './card-cast/card-cast.component';
 import { HeaderDetailComponent } from './header-detail/header-detail.component';
 import { RouterModule } from '@angular/router';
 import { ContainerVideoCardComponent } from './container-video-card/container-video-card.component';
@@ -12,6 +13,7 @@ import { MaterialModule } from '../material.module';
 import { FilterComponent } from './filter/filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToolbarDetailComponent } from './toolbar-detail/toolbar-detail.component';
+import { ContainerCastCardComponent } from './container-cast-card/container-cast-card.component';
 
 
 
@@ -31,7 +33,9 @@ import { ToolbarDetailComponent } from './toolbar-detail/toolbar-detail.componen
     FooterComponent,
     FilterComponent,
     HeaderDetailComponent,
-    ToolbarDetailComponent
+    ToolbarDetailComponent,
+    CardCastComponent,
+    ContainerCastCardComponent
   ],
   exports: [
     ContainerCardComponent,
@@ -42,7 +46,9 @@ import { ToolbarDetailComponent } from './toolbar-detail/toolbar-detail.componen
     FooterComponent,
     FilterComponent,
     HeaderDetailComponent,
-    ToolbarDetailComponent
+    ToolbarDetailComponent,
+    CardCastComponent,
+    ContainerCastCardComponent
   ]
 })
 export class SharedModule { }

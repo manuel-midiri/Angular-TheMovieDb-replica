@@ -16,7 +16,7 @@
 <main>
   <section class="container-popular">
     <app-header-section [title]="'Cosa è popolare'" [listMenu]="listMenuPopular"></app-header-section>
-    <app-container-card [arrayItems]="moviePopular.results"></app-container-card>
+    <app-container-card [arrayItems]="moviePopular.results" [router]="moviePopular.section"></app-container-card>
   </section>
   <section class="container-popular">
     <app-header-section [title]="'Visione gratuita'" [listMenu]="listMenuFree"></app-header-section>

@@ -1,0 +1,9 @@
+<div class="container-card">
+  <div class="container-card__image">
+    <img [src]="'https://image.tmdb.org/t/p/original/' + objMovie.profile_path" [alt]="objMovie.original_name">
+  </div>
+  <div class="container-card__text">
+    <p class="container-card__text__name">{{ objMovie.original_name }}</p>
+    <p class="container-card__text__department">{{ objMovie.known_for_department }}</p>
+  </div>
+</div>

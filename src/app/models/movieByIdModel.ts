@@ -101,6 +101,7 @@ export interface HeaderModel {
   tagline: string;
   overview: string;
   release_date: string;
-  runtime: number;
-  crew: Crew[];
+  runtime?: number;
+  crew?: Crew[];
+  last_air_date?: string;
 }

@@ -1,90 +1,92 @@
 <app-toolbar-detail></app-toolbar-detail>
 <div class="container-header">
-  <div class="container-header__image">
-    <div class="container-header__image__img">
-      <img [src]="headerDetail.poster_path" [alt]="headerDetail.title">
-    </div>
-    <div class="container-header__image__watch">
-      Now Steaming
-    </div>
-  </div>
-  <div class="container-header__description">
-    <div class="container-header__description__title">
-      <div class="container-header__description__title__text">
-        <h1>{{ headerDetail.title }}</h1>
-        <p>({{ headerDetail.release_date | date: 'yyyy' }})</p>
+  <div class="container-header__box">
+    <div class="container-header__box__image">
+      <div class="container-header__box__image__img">
+        <img [src]="headerDetail.poster_path" [alt]="headerDetail.title">
       </div>
-      <div class="container-header__description__title__container-subTitle">
-        <div class="container-header__description__title__container-subTitle__release">
-          <p class="container-header__description__title__container-subTitle__release__adult" *ngIf="!headerDetail.adult">VM14</p>
-          <p class="container-header__description__title__container-subTitle__release__adult" *ngIf="headerDetail.adult">VM18</p>
-          <p>{{ headerDetail.release_date | date: 'dd/MM/yyyy' }}</p>
+      <div class="container-header__box__image__watch">
+        Now Steaming
+      </div>
+    </div>
+    <div class="container-header__box__description">
+      <div class="container-header__box__description__title">
+        <div class="container-header__box__description__title__text">
+          <h1>{{ headerDetail.title }}</h1>
+          <p>({{ headerDetail.release_date | date: 'yyyy' }})</p>
         </div>
-        <ul class="container-header__description__title__container-subTitle__genres">
-          <li>
-              <span *ngFor="let genres of headerDetail.genres; let idx = index;">
-                {{ idx < headerDetail.genres.length - 1 ? genres.name + ', ' : genres.name }}
-              </span>
-          </li>
-          <li>
-            <p>{{ headerDetail.runtime }}</p>
-          </li>
-        </ul>
+        <div class="container-header__box__description__title__container-subTitle">
+          <div class="container-header__box__description__title__container-subTitle__release">
+            <p class="container-header__box__description__title__container-subTitle__release__adult" *ngIf="!headerDetail.adult">VM14</p>
+            <p class="container-header__box__description__title__container-subTitle__release__adult" *ngIf="headerDetail.adult">VM18</p>
+            <p>{{ headerDetail.release_date | date: 'dd/MM/yyyy' }}</p>
+          </div>
+          <ul class="container-header__box__description__title__container-subTitle__genres">
+            <li>
+                <span *ngFor="let genres of headerDetail.genres; let idx = index;">
+                  <i>{{ idx < headerDetail.genres.length - 1 ? genres.name + ', ' : genres.name }}</i>
+                </span>
+            </li>
+            <li>
+              <p>{{ headerDetail.runtime }}m</p>
+            </li>
+          </ul>
+        </div>
       </div>
+      <div class="container-header__box__description__social">
+        <div class="container-header__box__description__social__container-percentage">
+          <p class="container-header__box__description__social__container-percentage__number">{{ headerDetail.vote_average }}</p>
+          <p class="container-header__box__description__social__container-percentage__simbol">%</p>
+        </div>
+        <p class="container-header__box__description__social__text">Punteggio utente</p>
+        <div class="container-header__box__description__social__container-social">
+          <ul>
+            <li>
+              <mat-icon>format_list_bulleted</mat-icon>
+            </li>
+            <li>
+              <mat-icon>favorite</mat-icon>
+            </li>
+            <li>
+              <mat-icon>bookmark</mat-icon>
+            </li>
+            <li>
+              <mat-icon>star</mat-icon>
+            </li>
+          </ul>
+        </div>
+        <div class="container-header__box__description__social__container-trailer">
+          <mat-icon>arrow_right</mat-icon>
+          <p>Guarda Trailer</p>
+        </div>
+      </div>
+      <div class="container-header__box__description__text">
+        <div class="container-header__box__description__text__description">
+          <p><i>{{ headerDetail.tagline }}</i></p>
+          <h4>Descrizione</h4>
+          <p>{{ headerDetail.overview }}</p>
+        </div>
+        <div class="container-header__box__description__text__people">
+          <ul>
+            <li>
+              <p>Greg Russo</p>
+              <small>Screenplay, Story</small>
+            </li>
+            <li>
+              <p>Simon McQuoid</p>
+              <small>Director</small>
+            </li>
+            <li>
+              <p>Dave Callaham</p>
+              <small>Screenplay</small>
+            </li>
+            <li>
+              <p>Oren Uziel</p>
+              <small>Story</small>
+            </li>
+          </ul>
+        </div>
     </div>
-    <div class="container-header__description__social">
-      <div class="container-header__description__social__container-percentage">
-        <p class="container-header__description__social__container-percentage__number">{{ headerDetail.vote_average }}</p>
-        <p class="container-header__description__social__container-percentage__simbol">%</p>
-      </div>
-      <p class="container-header__description__social__text">Punteggio utente</p>
-      <div class="container-header__description__social__container-social">
-        <ul>
-          <li>
-            <mat-icon>format_list_bulleted</mat-icon>
-          </li>
-          <li>
-            <mat-icon>favorite</mat-icon>
-          </li>
-          <li>
-            <mat-icon>bookmark</mat-icon>
-          </li>
-          <li>
-            <mat-icon>star</mat-icon>
-          </li>
-        </ul>
-      </div>
-      <div class="container-header__description__social__container-trailer">
-        <mat-icon>arrow_right</mat-icon>
-        <p>Guarda Trailer</p>
-      </div>
     </div>
-    <div class="container-header__description__text">
-      <div class="container-header__description__text__description">
-        <p><i>{{ headerDetail.tagline }}</i></p>
-        <h4>Descrizione</h4>
-        <p>{{ headerDetail.overview }}</p>
-      </div>
-      <div class="container-header__description__text__people">
-        <ul>
-          <li>
-            <p>Greg Russo</p>
-            <small>Screenplay, Story</small>
-          </li>
-          <li>
-            <p>Simon McQuoid</p>
-            <small>Director</small>
-          </li>
-          <li>
-            <p>Dave Callaham</p>
-            <small>Screenplay</small>
-          </li>
-          <li>
-            <p>Oren Uziel</p>
-            <small>Story</small>
-          </li>
-        </ul>
-      </div>
   </div>
-</div>
 </div>

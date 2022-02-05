@@ -23,7 +23,13 @@ export class UpdateBSMovieService {
 
       if (routeMenuFilm.POPOLARE === item) {
         this.theMovieDbService.getMoviePopular().pipe(
-          tap(movies => this.theMovieDbService.moviePopularBS.next(movies)),
+          tap(movies => {
+            const movieWithSection = {
+              ...movies,
+              section: 'movie'
+            }
+            this.theMovieDbService.moviePopularBS.next(movieWithSection);
+          }),
           switchMap(() => this.sharedService.setFilter$),
           tap(currentValue => this.sharedService.sortingMovie(currentValue))
         ).subscribe();
@@ -31,7 +37,13 @@ export class UpdateBSMovieService {
 
       if (routeMenuFilm.ADESSO_IN_TV === item) {
         this.theMovieDbService.getTheater().pipe(
-          tap(movies => this.theMovieDbService.moviePopularBS.next(movies)),
+          tap(movies => {
+            const movieWithSection = {
+              ...movies,
+              section: 'movie'
+            }
+            this.theMovieDbService.moviePopularBS.next(movieWithSection);
+          }),
           switchMap(() => this.sharedService.setFilter$),
           tap(currentValue => this.sharedService.sortingMovie(currentValue))
         ).subscribe();
@@ -39,7 +51,13 @@ export class UpdateBSMovieService {
 
       if (routeMenuFilm.IN_ARRIVO === item) {
         this.theMovieDbService.getUpcoming().pipe(
-          tap(movies => this.theMovieDbService.moviePopularBS.next(movies)),
+          tap(movies => {
+            const movieWithSection = {
+              ...movies,
+              section: 'movie'
+            }
+            this.theMovieDbService.moviePopularBS.next(movieWithSection);
+          }),
           switchMap(() => this.sharedService.setFilter$),
           tap(currentValue => this.sharedService.sortingMovie(currentValue))
         ).subscribe();
@@ -47,7 +65,13 @@ export class UpdateBSMovieService {
 
       if (routeMenuFilm.PIU_VOTATI === item) {
         this.theMovieDbService.getMovieTopRated().pipe(
-          tap(movies => this.theMovieDbService.moviePopularBS.next(movies)),
+          tap(movies => {
+            const movieWithSection = {
+              ...movies,
+              section: 'movie'
+            }
+            this.theMovieDbService.moviePopularBS.next(movieWithSection);
+          }),
           switchMap(() => this.sharedService.setFilter$),
           tap(currentValue => this.sharedService.sortingMovie(currentValue))
         ).subscribe();
@@ -67,7 +91,10 @@ export class UpdateBSMovieService {
           this.pages.pipe(
             mergeMap((idx: number) => this.theMovieDbService.getMoviePopular(idx)),
             tap((movies: MoviePopular) => {
-              movieObj = movies;
+              movieObj = {
+                ...movies,
+                section: 'movie'
+              }
               arrTemp1.push(...movies.results)
               movieObj = {
                 ...movieObj,
@@ -88,7 +115,10 @@ export class UpdateBSMovieService {
           this.pages.pipe(
             mergeMap((idx: number) => this.theMovieDbService.getTheater(idx)),
             tap((movies: MoviePopular) => {
-              movieObj = movies;
+              movieObj = {
+                ...movies,
+                section: 'movie'
+              }
               arrTemp2.push(...movies.results)
               movieObj = {
                 ...movieObj,
@@ -109,7 +139,10 @@ export class UpdateBSMovieService {
           this.pages.pipe(
             mergeMap((idx: number) => this.theMovieDbService.getUpcoming(idx)),
             tap((movies: MoviePopular) => {
-              movieObj = movies;
+              movieObj = {
+                ...movies,
+                section: 'movie'
+              }
               arrTemp3.push(...movies.results)
               movieObj = {
                 ...movieObj,
@@ -130,7 +163,10 @@ export class UpdateBSMovieService {
           this.pages.pipe(
             mergeMap((idx: number) => this.theMovieDbService.getMovieTopRated(idx)),
             tap((movies: MoviePopular) => {
-              movieObj = movies;
+              movieObj = {
+                ...movies,
+                section: 'movie'
+              }
               arrTemp3.push(...movies.results)
               movieObj = {
                 ...movieObj,
