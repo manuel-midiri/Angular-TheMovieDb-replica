@@ -20,11 +20,11 @@ header{
     text-align: center;
     font-weight: bold;
     &__year{
-      margin-top: 100px;
+      margin-top: 100px!important;
       font-size: 150px;
     }
     &__text-up{
-      margin-top: 100px;
+      margin-top: 100px!important;
       font-size: 40px;
     }
     &__text-bottom{
@@ -41,9 +41,9 @@ header{
       position: relative;
       &__textSearch{
         position: absolute;
-        top: 70%;
+        top: 35%;
         right: 1%;
-        transform: translateY(-70%);
+        transform: translateY(-35%);
         p{
           font-weight: bold;
           &:hover{

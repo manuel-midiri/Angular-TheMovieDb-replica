@@ -25,8 +25,20 @@ export class HeaderSectionComponent implements OnInit {
       this.theMovieDBService.moviePopularBS.next(movieWithSection);
       this.theMovieDBService.movieTrailerBS.next(movieWithSection);
     });
-    this.theMovieDBService.getMovieTopRated().subscribe(movieFree => this.theMovieDBService.movieFreeVisionBS.next(movieFree));
-    this.theMovieDBService.getTheater().subscribe(movieTreand => this.theMovieDBService.movieMovieTrendBS.next(movieTreand));
+    this.theMovieDBService.getMovieTopRated().subscribe(movieFree => {
+      const movieWithSection = {
+        ...movieFree,
+        section: 'movie'
+      };
+      this.theMovieDBService.movieFreeVisionBS.next(movieWithSection);
+    });
+    this.theMovieDBService.getTheater().subscribe(movieTreand => {
+      const movieWithSection = {
+        ...movieTreand,
+        section: 'movie'
+      };
+      this.theMovieDBService.movieMovieTrendBS.next(movieWithSection);
+    });
     if (this.listMenu) {
       this.selectedItem = this.listMenu[0];
     };

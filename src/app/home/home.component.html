@@ -20,7 +20,7 @@
   </section>
   <section class="container-popular">
     <app-header-section [title]="'Visione gratuita'" [listMenu]="listMenuFree"></app-header-section>
-    <app-container-card [arrayItems]="movieFree.results"></app-container-card>
+    <app-container-card [arrayItems]="movieFree.results"  [router]="movieFree.section"></app-container-card>
   </section>
   <section class="container-popular trailer"
     [ngStyle]="{'background-image': imageBackgroundSection ? 'url(' + imageBackgroundSection + ')' : ''}"
@@ -30,7 +30,7 @@
   </section>
   <section class="container-popular">
     <app-header-section [title]="'Di tendenza'" [listMenu]="listMenuTrend"></app-header-section>
-    <app-container-card [arrayItems]="movieTreand.results"></app-container-card>
+    <app-container-card [arrayItems]="movieTreand.results"  [router]="movieTreand.section"></app-container-card>
   </section>
 </main>
 <footer>
